@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h5>MESSAGGIO RICEVUTO DA PARTE DI {{$user_data['name']}}</h5>
+    <p>Abbiamo ricevuto il seguente messaggio:</p>
+    <p>{{$user_data['message']}}</p>
+</body>
+</html>
