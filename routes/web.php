@@ -25,3 +25,7 @@ Route::get('/prodotti', [PublicController::class, 'prodotti'])->name('prodotti')
 Route::get('/chiSiamo', [PublicController::class, 'chiSiamo'])->name('chiSiamo');
 
 Route::post('/contattaci/submit', [PublicController::class, 'contattaci_submit'])->name('contattaci_submit');
+
+Route::post('/article', [PublicController::class, 'article'])->name('article');
+
+

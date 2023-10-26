@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\AdminMail;
+use App\Models\Article;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -42,5 +43,12 @@ class PublicController extends Controller
         Mail::to('hack96@aulab.com')->send(new AdminMail($user_data));
         return redirect(route('ringraziamenti'));
       
+    }
+    public function article(Request $request){
+        $article = Article::create([
+                'name' => $request->name,
+                'price' => $request->price,
+                'seller' => $request->seller,
+        ]);
     }
 }
