@@ -7,11 +7,13 @@ use App\Models\Article;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ArticleRequest;
 
 class PublicController extends Controller
 {
     public function welcome(){
-        return view('welcome');
+        $articles = Article::all();
+        return view('welcome', compact('articles'));
     }
 
     public function contattaci(){
@@ -44,11 +46,18 @@ class PublicController extends Controller
         return redirect(route('ringraziamenti'));
       
     }
-    public function article(Request $request){
-        $article = Article::create([
+    public function article(ArticleRequest $request){
+            $article = Article::create([
                 'name' => $request->name,
                 'price' => $request->price,
                 'seller' => $request->seller,
+                'img'=>$request->file('img')->store('public/articles/img'),  
         ]);
+       
+
+        return redirect(route('welcome'))->with('message', "Hai caricato correttamente l'articolo");
     }
+        public function articoloDettaglio(){
+            return view('articoloDettaglio');
+        }
 }

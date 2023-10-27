@@ -28,4 +28,6 @@ Route::post('/contattaci/submit', [PublicController::class, 'contattaci_submit']
 
 Route::post('/article', [PublicController::class, 'article'])->name('article');
 
+Route::get('/articolo-al-dettaglio', [PublicController::class, 'articoloDettaglio'])->name('articoloDettaglio');
+
 

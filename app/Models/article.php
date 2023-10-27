@@ -13,5 +13,6 @@ class article extends Model
         'name',
         'price',
         'seller',
+        'img',
     ];
 }
